@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Layla — a responsive ecommerce shopping demo built with HTML, CSS and JavaScript." />
+  <title>Layla | Shop Better</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#products">Skip to products</a>
+  <div class="announcement">🚚 Free shipping on demo orders over $100 <span>·</span> Welcome to Layla</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="Layla homepage"><span class="logo-mark">✦</span> lay<span>la</span><span class="logo-dot">.</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#products">Shop</a><a href="#features">Why us</a><a href="#about">About</a></nav>
+      <div class="header-actions">
+        <button id="search-focus" class="icon-btn search-trigger" aria-label="Go to product search">⌕</button>
+        <button id="orders-button" class="text-btn" aria-label="View demo orders">Orders</button>
+        <button id="cart-button" class="cart-button" aria-label="Open shopping cart">🛍 <span>Cart</span> <span id="cart-count" class="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home"><div class="container hero-grid">
+      <div class="hero-content"><div class="eyebrow"><span class="dot"></span> DISCOVER THE EVERYDAY EXTRAORDINARY</div><h1>Style your life.<br><em>Love every detail.</em></h1><p>Beautifully curated essentials for the way you live. Explore thoughtful designs, modern tech, and everyday favorites in one beautiful shop.</p><div class="hero-buttons"><a class="button primary" href="#products">Shop collection <span>↗</span></a><a class="button subtle" href="#features">Discover more <span>→</span></a></div><div class="hero-proof"><div class="avatar-stack"><span>😊</span><span>😎</span><span>🙂</span></div><div><strong>Made for curious shoppers</strong><small>A portfolio ecommerce demo</small></div></div></div>
+      <div class="hero-art" aria-label="Decorative illustration of modern shopping products"><div class="art-halo"></div><div class="art-card art-one"><img class="hero-product-photo" src="assets/headphones.webp" alt="Premium wireless headphones"><span>Sound, reimagined.</span></div><div class="art-card art-two"><img class="hero-product-photo" src="assets/watch.webp" alt="Elegant everyday watch"><span>Everyday essentials</span></div><div class="art-float top">✦ New arrivals</div><div class="art-float bottom">↗ Curated for you</div></div>
+    </div></section>
+
+    <section class="perks" id="features"><div class="container perks-grid"><div><span class="perk-icon">✧</span><span><strong>Curated picks</strong><small>Modern everyday favorites</small></span></div><div><span class="perk-icon">◈</span><span><strong>Easy browsing</strong><small>Find what you love faster</small></span></div><div><span class="perk-icon">♧</span><span><strong>Secure-style checkout</strong><small>Demo only · no payments</small></span></div><div><span class="perk-icon">↺</span><span><strong>Cart saved locally</strong><small>Pick up where you left off</small></span></div></div></section>
+
+    <section class="products-section" id="products"><div class="container"><div class="section-heading"><div><span class="kicker">THE COLLECTION</span><h2>Find your new <em>favorite.</em></h2><p>Thoughtful things, selected for your everyday.</p></div><span class="collection-label">✦ 12 curated essentials</span></div>
+      <div class="filter-toolbar"><div class="category-tabs" id="category-tabs" aria-label="Product categories"><button class="category active" data-category="All">All products</button><button class="category" data-category="Technology">Technology</button><button class="category" data-category="Fashion">Fashion</button><button class="category" data-category="Home">Home</button><button class="category" data-category="Accessories">Accessories</button></div><div class="toolbar-right"><label class="search-box"><span>⌕</span><input id="product-search" type="search" placeholder="Search products..." aria-label="Search products" /></label><select id="sort-select" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select></div></div>
+      <div id="product-grid" class="product-grid" aria-live="polite"></div><div id="empty-state" class="empty-state" hidden><div>🔎</div><h3>No products found</h3><p>Try another search or category.</p><button class="button primary" id="reset-filters">Show all products</button></div>
+    </div></section>
+    <section class="promo"><div class="container promo-content"><div><span class="kicker">SOMETHING SPECIAL</span><h2>Good things come<br>to those who <em>explore.</em></h2><p>Refresh your favorites with pieces that do more.</p><a href="#products" class="button light">Explore the collection ↗</a></div><div class="promo-graphic">✷<span>made for<br>every day.</span></div></div></section>
+    <section id="about" class="about"><div class="container about-inner"><div><span class="kicker">ABOUT THE PROJECT</span><h2>Designed to <em>inspire.</em><br>Built to learn.</h2></div><div><p>Layla is a front-end ecommerce portfolio project created with HTML, CSS, and JavaScript. It demonstrates responsive layouts, product filtering, a persistent cart, and a simulated checkout flow.</p><p class="demo-note"><strong>Portfolio demo:</strong> Products are sample data. No real payment, shipping, account system, or server-side order processing is connected.</p></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-top"><a href="#home" class="logo"><span class="logo-mark">✦</span> lay<span>la</span><span class="logo-dot">.</span></a><p>Beautiful things, everyday.</p><a href="#products">Back to shop ↑</a></div><div class="container footer-bottom"><span>© <span id="year"></span> Layla · Built for a developer portfolio</span><span>HTML · CSS · JavaScript</span></div></footer>
+
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="cart-drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-heading" aria-hidden="true"><div class="drawer-head"><div><span class="kicker">YOUR BAG</span><h2 id="cart-heading">Shopping Cart</h2></div><button class="close-btn" id="cart-close" aria-label="Close cart">×</button></div><div id="cart-items" class="cart-items"></div><div class="drawer-foot"><div class="subtotal-row"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><p class="drawer-note">Taxes and shipping are not charged. Demo checkout only.</p><button id="checkout-button" class="button primary full">Continue to checkout →</button><button id="continue-shopping" class="button outline full">Continue shopping</button></div></aside>
+  <div id="product-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" aria-hidden="true"><div class="modal-header"><h2 id="product-modal-title">Product details</h2><button class="close-btn" id="product-modal-close" aria-label="Close product details">×</button></div><div id="product-modal-body"></div></div>
+  <div id="checkout-modal" class="modal checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true"><div class="modal-header"><div><span class="kicker">CHECKOUT</span><h2 id="checkout-title">Finish your order</h2></div><button class="close-btn" id="checkout-close" aria-label="Close checkout">×</button></div><div class="checkout-body"><div class="demo-alert">🔒 <strong>Demo only:</strong> No real orders or payments. Do not enter real card details.</div><form id="checkout-form"><div class="form-grid"><label>Full name <input name="fullname" autocomplete="name" minlength="2" required placeholder="Your full name" /></label><label>Email address <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" /></label><label>Phone <input type="tel" name="phone" autocomplete="tel" required placeholder="Your phone number" /></label><label>City <input name="city" autocomplete="address-level2" required placeholder="Your city" /></label><label class="wide">Delivery address <input name="address" autocomplete="street-address" required placeholder="Street and neighborhood" /></label></div><div class="checkout-summary"><span>Items</span><strong id="checkout-count">0</strong><span>Order total</span><strong id="checkout-total">$0.00</strong></div><button class="button primary full" type="submit">Place demo order →</button></form></div></div>
+  <div id="orders-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="orders-title" aria-hidden="true"><div class="modal-header"><h2 id="orders-title">My demo orders</h2><button class="close-btn" id="orders-close" aria-label="Close orders">×</button></div><div class="orders-body" id="orders-list"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
